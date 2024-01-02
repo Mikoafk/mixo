@@ -5,11 +5,18 @@ import CardFile from "../components/CardFile";
 
 import { database } from "../firebase";
 import { collection } from "firebase/firestore";
+import { useLocation } from "react-router-dom";
 import { useCollection } from "react-firebase-hooks/firestore";
+
+import RedirectPage from "./RedirectPage";
 
 export default function HomePage() {
     const [packs, setPacks] = useState([]);
     const [value, loading] = useCollection(collection(database, "packs"));
+
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
+    const fileQuery = query.get("file");
 
     useEffect(() => {
         if (!loading && value) {
@@ -18,7 +25,9 @@ export default function HomePage() {
         }
     }, [loading, value]);
 
-    return (
+    return fileQuery ? (
+        <RedirectPage fileId={fileQuery} />
+    ) : (
         <Container maxWidth="lg">
             <Stack alignItems="center" mb={10}>
                 <Typography variant="h1" fontWeight="bolder">
@@ -42,12 +51,11 @@ export default function HomePage() {
             <Grid container spacing={{ xs: 2 }}>
                 {!loading &&
                     packs.map((pack, index) => (
-                        <Grid key={index} item>
+                        <Grid xs={3} key={index} item>
                             <CardFile
                                 name={pack?.name}
                                 type={pack?.type}
                                 size={pack?.size}
-                                url={pack?.url}
                                 id={pack?.id}
                             />
                         </Grid>

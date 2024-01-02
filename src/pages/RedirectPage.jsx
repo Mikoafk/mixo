@@ -1,14 +1,14 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+
 import { database } from "../firebase";
 import { collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { useEffect } from "react";
-import { Box, Typography } from "@mui/material";
 
-export default function RedirectPage() {
-    const { id } = useParams();
+export default function RedirectPage({ fileId }) {
     const packsCollection = collection(database, "packs");
-    const packsQuery = query(packsCollection, where("id", "==", id));
+    const packsQuery = query(packsCollection, where("id", "==", fileId));
 
     const [snapshot, loading] = useCollection(packsQuery);
 

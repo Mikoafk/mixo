@@ -17,7 +17,7 @@ export default function CardFile({
     id,
 }) {
     return (
-        <Card sx={{ width: 250 }}>
+        <Card>
             <CardContent
                 sx={{
                     height: 150,
@@ -61,7 +61,7 @@ export default function CardFile({
             <CardActions disableSpacing>
                 <IconButton
                     LinkComponent="a"
-                    href={id}
+                    href={`/?file=${id}`}
                     target="_blank"
                     aria-label="download file"
                 >
