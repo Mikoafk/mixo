@@ -51,7 +51,7 @@ export default function HomePage() {
             <Grid container spacing={{ xs: 2 }}>
                 {!loading &&
                     packs.map((pack, index) => (
-                        <Grid xs={3} key={index} item>
+                        <Grid xs={12} md={6} lg={3} key={index} item>
                             <CardFile
                                 name={pack?.name}
                                 type={pack?.type}
