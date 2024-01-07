@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.c167a919.css","mappings":"0EAEA,iBAGI,QAAS,CACT,SACJ","sources":["index.css"],"sourcesContent":["@import url(\"https://fonts.googleapis.com/css2?family=Afacad&display=swap\");\r\n\r\n*,\r\n::after,\r\n::before {\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n"],"names":[],"sourceRoot":""}
