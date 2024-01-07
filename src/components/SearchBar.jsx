@@ -1,22 +1,23 @@
 import { useState } from "react";
-import { Stack, TextField, IconButton } from "@mui/material";
+import { Search } from "@mui/icons-material";
 
-import SearchIcon from "@mui/icons-material/Search";
+import "../styles/search-bar.css";
 
 export default function SearchBar({ ...props }) {
     const [textSearch, setTextSearch] = useState("");
 
     return (
-        <Stack component="form" direction="row" spacing={1} alignItems="center">
-            <TextField
-                {...props}
+        <div className="search-bar-main">
+            <input
+                className="search-input"
                 name="search"
+                placeholder="Buscar packs... (eso suena mal)"
                 value={textSearch}
                 onChange={(e) => setTextSearch(e.target?.value)}
             />
-            <IconButton color="primary" aria-label="search" type="submit">
-                <SearchIcon />
-            </IconButton>
-        </Stack>
+            <button className="search-button">
+                <Search />
+            </button>
+        </div>
     );
 }

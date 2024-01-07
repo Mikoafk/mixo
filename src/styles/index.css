@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad&display=swap");
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+body {
+    color: #ffffff;
+    font-family: "Afacad", sans-serif;
+    background: linear-gradient(0deg, rgb(44, 31, 59), rgb(25, 23, 46));
+}
+
+a {
+    color: rgb(135, 157, 255);
+    text-decoration: none;
+}

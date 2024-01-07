@@ -1,0 +1,20 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title-page {
+    font-size: 5rem;
+    margin-top: 3rem;
+}
+
+.short-description-page {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
